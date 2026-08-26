@@ -1,4 +1,1 @@
-<! DOCTYPE html>
-<html lang=en>
-Hello IST541
-</html>
+This is a readme.
