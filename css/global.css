@@ -1,0 +1,15 @@
+body {
+    // tbd
+}
+main {
+    margin-left: 1.6803%;
+    margin-right: 1.6803%;
+}   
+img.first {
+    width: 50%;
+    height: auto;
+}
+p.copyright {
+    font-size: small;
+    color: gray;
+}
