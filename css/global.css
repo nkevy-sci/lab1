@@ -22,11 +22,11 @@ main {
 }
 h1 {
     font-size: var(--big-text);
-    margin: 0px 0px 0px 0px;
+    margin: 0 0 0 0;
 }
 h2 {
     font-size: var(--head-text);
-    margin: 0px 0px 0px 0px;
+    margin: 0 0 0 0;
 }
 img.first {
     width: 50%;
@@ -49,10 +49,17 @@ p.copyright {
 }
 .column-parent {
     display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     justify-content: space-evenly;
 }
 .left-col, .right-col {
     flex: 1;
+    min-width: 400px;
+}
+.column-parent, h2 {
+    margin-left: 2.61803vw;
+    margin-right: 2.61803vw;
 }
 .step-figure, .step-video {
     max-width: 500px;
