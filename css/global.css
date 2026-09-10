@@ -47,6 +47,16 @@ p.copyright {
 .page-footer {
     text-align: center;
 }
+.collapse-step {
+    margin: 1.618033vh;
+}
+.step-summary {
+    border: 2px solid black;
+    border-radius: 6px;
+    padding-bottom: 1.618033vh;
+    padding-left: 1.618033vw;
+    padding-top: 1.618033vw;
+}
 .column-parent {
     display: flex;
     flex-wrap: wrap;
