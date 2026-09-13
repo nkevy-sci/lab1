@@ -66,6 +66,15 @@ p.copyright {
     margin-top: 6.854085vh;
     transform: translate(-1.2vh,0);
 }
+#step-note {
+    background-color: #DFE6E1;
+    padding: 1.618033vh;
+    border: solid 1px var(--gray-color);
+    border-left: solid 6px var(--gray-color);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    
+}
 .wrap-hero-image, .wrap-hero-text {
     display: flex;
     margin: 0 0 0 0;
