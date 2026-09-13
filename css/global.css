@@ -53,6 +53,7 @@ p.copyright {
 }
 #banner-text {
     transform: translate(-1.618033vw,0);
+    padding-left: 2.618031vw;
 }
 #page-break-a {
     color: var(--primary-color);
