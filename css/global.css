@@ -51,6 +51,21 @@ p.copyright {
     margin-right: 6.854085vh;
     margin-bottom: 1.618033vh;
 }
+#banner-text {
+    transform: translate(-1.618033vw,0);
+}
+#page-break-a {
+    color: var(--primary-color);
+    width: 38%;    
+    margin-bottom: 2.618031vh;
+    transform: translate(-1vh,-8vh);
+}
+#page-break-b {
+    color: var(--primary-color);
+    width: 38%;
+    margin-top: 6.854085vh;
+    transform: translate(-1.2vh,0);
+}
 .wrap-hero-image, .wrap-hero-text {
     display: flex;
     margin: 0 0 0 0;
@@ -60,11 +75,11 @@ p.copyright {
     align-items: center;
 }
 .wrap-hero-text {
-    margin-bottom: 2.618031vh;
-    transform: translate(2.618031vw, -6.854085vh);
+    transform: translate(0, -6.854085vh);
 }
 .job-aid-hero-image {
     max-width: 500px;
+    transform: translate(-1vw, -1vh);
     margin: 0 0 0 0;
 }
 .intro-text {
@@ -120,9 +135,15 @@ p.copyright {
     margin-top: 6.854085vh;
     margin-bottom: 6.854085vh;
     margin-left: 1.618033vh;
+    margin-right: 1.618033vh;
+    transform: translate(-1vh,0);
 }
 .video-section-child {
-    transform: translate(2.61803vh, 0);
+    width: fit-content;
+}
+.video-caption {
+    max-width: 500px;
+    width: 100%;
 }
 .video-header {
     margin: 0 0 1.618033vh 0;
