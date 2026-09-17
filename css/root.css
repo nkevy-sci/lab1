@@ -1,0 +1,70 @@
+/* All color values live here. Select a page palette with data-theme on <html>. */
+:root {
+    --gray-color: #374151;
+    --text-blk: #222222;
+    --text-wht: #F8F8F8;
+    --text-muted: #666666;
+    --media-border: #000000;
+    --silver-top: #D3D6D9;
+    --silver-bottom: #B8BDC2;
+    --silver-border: #979DA3;
+    --silver-highlight: #EEF0F2;
+    --panel-top: #E2E4E6;
+    --panel-bottom: #C6CACF;
+    --panel-highlight: #F5F6F7;
+    --panel-hover-highlight: #FFFFFF;
+    --panel-active-top: #ECEEEF;
+    --panel-active-bottom: #D0D4D8;
+    --focus-color: #334D60;
+    --shadow-soft: rgb(0 0 0 / 12%);
+    --shadow-menu: rgb(0 0 0 / 16%);
+    --shadow-hover: rgb(0 0 0 / 18%);
+    --banner-highlight: rgb(255 255 255 / 18%);
+    --banner-shade: rgb(0 0 0 / 20%);
+    --big-text: 2.8235em;
+    --head-text: 1.618033em;
+}
+
+:root,
+:root[data-theme="index"] {
+    --primary-color: #365F83;
+    --alternate-color: #416F96;
+    --dark-color: #284860;
+    --theme-surface: #E3EBF2;
+}
+
+:root[data-theme="about"] {
+    --primary-color: #32696D;
+    --alternate-color: #3E797D;
+    --dark-color: #254E52;
+    --theme-surface: #E2EEEE;
+}
+
+:root[data-theme="contact"] {
+    --primary-color: #70536F;
+    --alternate-color: #816580;
+    --dark-color: #523D52;
+    --theme-surface: #EEE5ED;
+}
+
+:root[data-theme="create-vm"] {
+    --primary-color: #365F4B;
+    --alternate-color: #44745B;
+    --dark-color: #284838;
+    --theme-surface: #DFE6E1;
+}
+
+:root[data-theme="page-2"] {
+    --primary-color: #545D83;
+    --alternate-color: #66709A;
+    --dark-color: #3E4562;
+    --theme-surface: #E7E9F2;
+}
+
+:root[data-theme="page-3"] {
+    --primary-color: #785B3E;
+    --alternate-color: #896A49;
+    --dark-color: #59432E;
+    --theme-surface: #F0E9E0;
+}
+
