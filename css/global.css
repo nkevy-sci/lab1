@@ -108,10 +108,11 @@ p.copyright {
     border-radius: 6px;
     padding-bottom: 1.618033vh;
     padding-left: 1.618033vw;
-    padding-top: 1.618033vw;
+    padding-top: 1.618033vh;
     background-color: var(--primary-color);
     background: linear-gradient(to top, var(--dark-color), var(--primary-color));
     color: var(--text-wht);
+    font-size: var(--head-text)
 }
 .column-parent {
     display: flex;
