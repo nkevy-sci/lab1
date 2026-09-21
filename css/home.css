@@ -4,9 +4,6 @@
     --home-space: 1.618033rem;
     --home-section-space: 2.618031rem;
 }
-.page-banner { box-sizing: border-box; padding: clamp(1.618033rem, 4.23606vh, 4.23606rem) 1rem; }
-.page-banner h1 { font-size: clamp(2rem, 1.618033rem + 2vw, 2.8235rem); line-height: 1.2; overflow-wrap: break-word; }
-.banner-subtitle { margin: .618034rem 0 0; font-size: clamp(1rem, .8rem + 1vw, 1.618033rem); font-weight: bold; }
 main { width: var(--home-width); max-width: var(--home-width); padding-block: var(--home-section-space); }
 main > p { max-width: 68ch; margin-block: 1rem; }
 .column-parent {
