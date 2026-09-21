@@ -11,14 +11,15 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/head_foot.css">
   <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
   <header>
 
     <section class="page-banner">
     <div class="banner-text">
-        <h1>To Cloud Computing</h1>
-        <h2>An introduction to writing in the cloud</h2>
+        <h1>Towards Cloud Computing</h1>
+        <p class="banner-subtitle">An introduction to cloud software</p>
     </div>
     </section>
 
@@ -56,9 +57,9 @@
     <p>
         Also, I included iframes as requested by the lab 3 instructions. For example, interactive H5P content has been embedded below.
     </p>
-    <div class="column-parent">
-        <div class="left-column">
-            <h2>Popular Cloud Service Providers</h2>
+    <section class="column-parent" aria-labelledby="providers-heading">
+        <div class="left-column" id="cloud-provider-wrap-text">
+            <h2 id="providers-heading">Popular Cloud Service Providers</h2>
             <ol>
                 <li>
                     Amazon Web Services
@@ -72,18 +73,20 @@
             </ol>
         </div>
         <div class="right-column">
-        <!-- SLIDES H5P -->
-        <div class="wrap-iframe"><iframe id="cloud-providers-slides"
-            width="100%" height="615px"
-            src="https://nkevy-sci.github.io/lab1/cloud_service_providers.html"
-            title="H5P Activity">
+            <!-- SLIDES H5P -->
+            <div id="wrap-iframe"><iframe id="cloud-providers-slides"
+                src="cloud_service_providers.html"
+                title="The logos of popular cloud service providers."
+                allow="fullscreen" allowfullscreen scrolling="no">
+                </iframe>
+            </div>
         </div>
-        </iframe></div>
-    </div>
+    </section>
   </main>
 
   <footer class="page-footer">
     <p class="copyright-text">All Rights Reserved © 2026 Noah S. Kevy</p>
   </footer>
+  <script src="js/home.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+/* Proportions follow 1.618033; controls retain usable minimum sizes. */
+:root[data-theme="index"] {
+    --home-width: 85.410161%;
+    --home-space: 1.618033rem;
+    --home-section-space: 2.618031rem;
+}
+.page-banner { box-sizing: border-box; padding: clamp(1.618033rem, 4.23606vh, 4.23606rem) 1rem; }
+.page-banner h1 { font-size: clamp(2rem, 1.618033rem + 2vw, 2.8235rem); line-height: 1.2; overflow-wrap: break-word; }
+.banner-subtitle { margin: .618034rem 0 0; font-size: clamp(1rem, .8rem + 1vw, 1.618033rem); font-weight: bold; }
+main { width: var(--home-width); max-width: var(--home-width); padding-block: var(--home-section-space); }
+main > p { max-width: 68ch; margin-block: 1rem; }
+.column-parent {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618033fr);
+    align-items: start;
+    gap: var(--home-section-space);
+    margin-top: var(--home-section-space);
+}
+.left-column, .right-column { min-width: 0; }
+#cloud-provider-wrap-text { padding-top: .618034rem; }
+#cloud-provider-wrap-text ol { margin: var(--home-space) 0 0; padding-left: var(--home-space); }
+#cloud-provider-wrap-text li { padding-left: .381966rem; margin-block: .618034rem; }
+#wrap-iframe {
+    border: 1px solid var(--silver-border);
+    border-radius: .0618034rem;
+    background: var(--text-wht);
+    box-shadow: 0 .381966rem 1rem var(--shadow-soft);
+}
+#wrap-iframe:focus-within { outline: 2px solid var(--focus-color); outline-offset: 4px; }
+#cloud-providers-slides {
+    display: block;
+    width: 100%;
+    /* Initial space before the local player's measured height is available. */
+    aspect-ratio: 16 / 10;
+    border: 0;
+    border-radius: inherit;
+}
+.page-footer { width: var(--home-width); margin: 0 auto var(--home-space); }
+@media (max-width: 56rem) {
+    .column-parent { grid-template-columns: minmax(0, 1fr); gap: var(--home-space); }
+}
+@media (max-width: 35rem) {
+    main, .page-footer { width: calc(100% - 2rem); max-width: none; }
+    main { padding-block: var(--home-space); }
+    main h2 { font-size: 1.381966rem; }
+}

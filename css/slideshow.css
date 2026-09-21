@@ -1,0 +1,32 @@
+/* Keep adjustments outside the exported H5P library code. */
+html.h5p-iframe body { margin: 0; }
+html.h5p-iframe body > div { width: 100%; }
+html.h5p-iframe .h5p-content { box-sizing: border-box; min-width: 0; }
+/* Leave logo proportions intact while keeping navigation usable. */
+html.h5p-iframe .h5p-course-presentation .h5p-cp-navigation { min-height: 24px; }
+html.h5p-iframe .h5p-course-presentation .h5p-footer { min-height: 44px; font-size: max(.75em, 14px); }
+html.h5p-iframe .h5p-course-presentation .h5p-footer .h5p-footer-button {
+    min-width: 44px;
+    min-height: 44px;
+    box-sizing: border-box;
+}
+html.h5p-iframe .h5p-course-presentation .h5p-footer { align-items: center; }
+html.h5p-iframe .h5p-course-presentation .h5p-footer-left-adjusted { width: auto; flex: 0 0 auto; }
+html.h5p-iframe .h5p-course-presentation .h5p-footer-center-adjusted {
+    width: auto;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+html.h5p-iframe .h5p-course-presentation .h5p-footer-right-adjusted { width: auto; flex: 0 0 auto; }
+html.h5p-iframe .h5p-course-presentation .h5p-footer .h5p-footer-button { line-height: 44px; vertical-align: middle; }
+/* H5P clips its original proportional footer; the slide canvas still clips itself. */
+html.h5p-iframe .h5p-container.h5p-course-presentation { overflow: visible; }
+html.h5p-iframe .h5p-course-presentation .h5p-footer-center-adjusted,
+html.h5p-iframe .h5p-course-presentation .h5p-footer-right-adjusted {
+    height: 44px;
+    padding-block: 0;
+    box-sizing: border-box;
+}
