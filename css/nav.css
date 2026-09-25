@@ -39,7 +39,7 @@ nav a.nav-link:focus-visible, .dropbtn:focus-visible {
 .dropdown {
   position: relative;
   display: flex;
-  margin-left: auto;
+  margin-right: auto;
   /* Include the bar padding in the hover area down to the menu. */
   margin-bottom: -8px;
   padding-bottom: 8px;
@@ -53,7 +53,7 @@ nav a.nav-link:focus-visible, .dropbtn:focus-visible {
   display: none;
   position: absolute;
   top: 100%;
-  right: 0;
+  left: 0;
   width: 290px;
   max-width: calc(100vw - 16px);
   box-sizing: border-box;
