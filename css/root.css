@@ -1,5 +1,6 @@
 /* All color values live here. Select a page palette with data-theme on <html>. */
 :root {
+    --home-width: 85.410161%;
     --gray-color: #374151;
     --text-blk: #222222;
     --text-wht: #F8F8F8;
@@ -68,3 +69,8 @@
     --theme-surface: #F0E9E0;
 }
 
+
+/* Keep the shared page width comfortable on small screens. */
+@media (max-width: 35rem) {
+    :root { --home-width: calc(100% - 2rem); }
+}

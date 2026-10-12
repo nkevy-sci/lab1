@@ -1,5 +1,5 @@
 /* Page-local lesson styles use the destination site's existing palette. */
-.ssh-lesson { padding-top: 2rem; }
+.ssh-lesson { padding: clamp(2rem, 4vw, 3rem); }
 .ssh-lesson *, .ssh-skip-link { box-sizing: border-box; }
 .ssh-lesson h3 { margin: 0 0 1rem; font-size: 1.25rem; line-height: 1.4; }
 .ssh-lesson section + section { margin-top: 2.5rem; }

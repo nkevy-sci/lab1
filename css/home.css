@@ -1,6 +1,5 @@
 /* Proportions follow 1.618033; controls retain usable minimum sizes. */
 :root[data-theme="index"] {
-    --home-width: 85.410161%;
     --home-space: 1.618033rem;
     --home-section-space: 2.618031rem;
 }
@@ -37,7 +36,6 @@ main > p { max-width: 68ch; margin-block: 1rem; }
     .column-parent { grid-template-columns: minmax(0, 1fr); gap: var(--home-space); }
 }
 @media (max-width: 35rem) {
-    main, .page-footer { width: calc(100% - 2rem); max-width: none; }
     main { padding-block: var(--home-space); }
     main h2 { font-size: 1.381966rem; }
 }

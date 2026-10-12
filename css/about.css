@@ -1,9 +1,38 @@
+.about-page {
+  box-sizing: border-box;
+  width: var(--home-width);
+  max-width: var(--home-width);
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+.about-page h2 {
+  margin: 0 0 .875rem;
+  line-height: 1.3;
+}
+
+.about-page p {
+  max-width: 180ch;
+  margin: 0;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.about-page p + p {
+  margin-top: 1rem;
+}
+
+.about-page a:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 4px;
+}
+
 #about_the_author {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   align-items: start;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  margin-top: 2rem;
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 #about_the_author .author-text {
@@ -24,11 +53,12 @@
 @media (max-width: 48rem) {
   #about_the_author {
     grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
   }
 }
 
 #follow-linkedin {
-  margin-top: 3rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 #follow-linkedin .linkedin-profile {
@@ -41,9 +71,9 @@
   max-width: 18rem;
   min-height: clamp(4.8rem, 11.2vw, 10rem);
   margin-top: 1rem;
-  padding: clamp(.4rem, 1.6vw, 1.2rem);
+  padding: 1rem;
   border: 1px solid var(--silver-border);
-  border-radius: .5rem;
+  border-radius: 0;
   background: #fff;
   color: var(--text-muted);
   text-decoration: none;
@@ -70,4 +100,22 @@
 #follow-linkedin .linkedin-profile:focus-visible {
   outline: 3px solid var(--focus-color);
   outline-offset: 4px;
+}
+
+@media (max-width: 770px) {
+  #follow-linkedin .linkedin-profile {
+    margin-inline: auto;
+  }
+
+  #follow-linkedin #linkedin-heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
 }
