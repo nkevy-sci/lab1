@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="page-2">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn to login with the SSH command and create an SSH key pair.">
+  <meta name="author" content="Noah S. Kevy">
+  <title>Practice with SSH | To the Cloud</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/head_foot.css">
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/practice_ssh.css">
+  <script src="js/practice_ssh.js" defer></script>
+</head>
+<body>
+  <a class="ssh-skip-link" href="#main-content">Skip to main content</a>
+  <header>
+
+    <section class="page-banner">
+    <div class="banner-text">
+        <h1>Practice with SSH</h1>
+        <h2>An introduction to Secure Shell</h2>
+    </div>
+    </section>
+
+    <nav aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Home</a>
+
+      <!-- Drop Down -->
+      <div class="dropdown">
+        <button class="dropbtn">Learn ▾</button>
+
+        <!-- Inner Menu -->
+        <div class="dropdown-content">
+          <a class="nav-link" href="create_vm.html">1. Create a virtual machine</a>
+          <a class="nav-link" href="practice_ssh.html">2. Practice with SSH</a>
+          <a class="nav-link" href="page_3.html">3. Page 3</a>
+        </div>
+      </div>
+      <!-- End Drop Down -->
+
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+
+  </header>
+
+  <main id="main-content" class="ssh-lesson" tabindex="-1">
+  <section class="lesson-intro" aria-labelledby="lesson-title">
+    <h2 id="lesson-title">Logging in with SSH</h2>
+    <p>To log in to a virtual machine, you’ll often use <strong>Secure Shell (SSH)</strong>.</p>
+    <p>In this activity, you will learn how to login; and you'll also learn to create the cryptographic key pair that's required for a secure connection.</p>
+  </section>
+    <section class="command-activity" aria-labelledby="login-title">
+      <h3 id="login-title">Explore the login command</h3>
+      
+      <p>Here is an example.</p>
+      <pre class="command-example"><code>ssh -i ./lab_key learner@192.0.2.10</code></pre>
+      <p>Below, you can select each part of the command to learn more.</p>
+      <div class="command-row" role="group" aria-label="Explore the login command: selectable command parts">
+        <button type="button" class="command-part" aria-pressed="true" aria-controls="login-explanation" data-explanation="Starts the SSH program on your computer.">ssh</button><button type="button" class="command-part" aria-pressed="false" aria-controls="login-explanation" data-explanation="A flag that tells SSH which private key file to use. A filename must immediately follow.">-i</button><button type="button" class="command-part" aria-pressed="false" aria-controls="login-explanation" data-explanation="The file path to your private key file.">./lab_key</button><span class="destination-group"><button type="button" class="command-part" aria-pressed="false" aria-controls="login-explanation" data-explanation="Identifies your account on the virtual machine.">learner</button><button type="button" class="command-part" aria-pressed="false" aria-controls="login-explanation" data-explanation="Separates your username from the machine’s address.">@</button><button type="button" class="command-part" aria-pressed="false" aria-controls="login-explanation" data-explanation="The virtual machine’s IP address.">192.0.2.10</button></span>
+      </div>
+      <div class="command-explanation" tabindex="0" role="region" aria-label="Explore the login command: explanation">
+        <p id="login-explanation" aria-live="polite" aria-atomic="true">Starts the SSH program on your computer.</p>
+      </div>
+    </section>
+    <section class="command-activity" aria-labelledby="key-title">
+      <h3 id="key-title">Explore the SSH key pair</h3>
+      <p>When logging in, SSH uses a cryptographic key pair to verify your identity. Luckily, you can create a key pair with the <code>ssh-keygen</code> command.</p>
+      <p>Here is an example.</p>
+      <pre class="command-example"><code>ssh-keygen -t ed25519 -f ./lab_key</code></pre>
+      <p>Select each part of the command to learn more.</p>
+      <div class="command-row" role="group" aria-label="Explore the SSH key pair: selectable command parts">
+        <button type="button" class="command-part" aria-pressed="true" aria-controls="key-explanation" data-explanation="Creates a key pair: a private key and a matching public key.">ssh-keygen</button><button type="button" class="command-part" aria-pressed="false" aria-controls="key-explanation" data-explanation="A flag that specifies the type of key to create. The type must immediately follow.">-t</button><button type="button" class="command-part" aria-pressed="false" aria-controls="key-explanation" data-explanation="Selects Ed25519, a cryptographic key type supported by SSH.">ed25519</button><button type="button" class="command-part" aria-pressed="false" aria-controls="key-explanation" data-explanation="Specifies the filename and location for your private key. The path must immediately follow.">-f</button><button type="button" class="command-part" aria-pressed="false" aria-controls="key-explanation" data-explanation="The file path to your private key. The matching public key is saved as lab_key.pub.">./lab_key</button>
+      </div>
+      <div class="command-explanation" tabindex="0" role="region" aria-label="Explore the SSH key pair: explanation">
+        <p id="key-explanation" aria-live="polite" aria-atomic="true">Creates a key pair: a private key and a matching public key.</p>
+      </div>
+    </section>
+    <section class="lesson-support" aria-labelledby="keygen-prompts-title">
+      <h3 id="keygen-prompts-title">What happens when you run ssh-keygen?</h3>
+      <p>The <code>ssh-keygen</code> command is interactive. After you enter the command, your computer asks for additional information. It will ask you for a passphrase, or you may leave this blank. It may ask you for a filename.</p>
+      <p>In this example, <code>-f ./lab_key</code> already specifies the filename. But if you omit <code>-f</code> and its file path, ssh-keygen will ask where to save the key. Also, you must choose a different filename for each key pair. If you don't, you might replace an existing key.</p>
+      <p>After that's done, you’ll receive two files:</p>
+      <ul>
+        <li><strong>lab_key — your private key.</strong> Keep it on your computer, and do not share it.</li>
+        <li><strong>lab_key.pub — your public key.</strong> You'll either upload it to your cloud service account or install it directly on your virtual machine.</li>
+      </ul>
+    </section>
+
+    <section class="terminal-activity" aria-labelledby="terminal-title">
+  <section class="terminal-intro" aria-labelledby="terminal-title">
+    <h2 id="terminal-title">In the Terminal</h2>
+    <p>The screenshots below show how <code>ssh</code> and <code>ssh-keygen</code> might look when you run them in a terminal.</p>
+    <p>Before you begin the simulation, try to identify each command. In the image, select the buttons to check your answer and review what the command will do.</p>
+  </section>
+    <div class="terminal-image-wrapper">
+      <img class="terminal-image" src="img/ssh/ssh_hotspot.png" width="1920" height="1080" alt="Two terminal screenshots: the upper screenshot shows an SSH login command, and the lower screenshot shows an SSH key-generation command.">
+      <button type="button" class="terminal-hotspot terminal-hotspot-upper" data-command="login" aria-label="Explore upper terminal command" aria-pressed="false" aria-haspopup="dialog" aria-controls="terminal-dialog"><img src="img/ssh/click_bttn.png" alt=""></button>
+      <button type="button" class="terminal-hotspot terminal-hotspot-lower" data-command="key" aria-label="Explore lower terminal command" aria-pressed="false" aria-haspopup="dialog" aria-controls="terminal-dialog"><img src="img/ssh/click_bttn.png" alt=""></button>
+    </div>
+    <details class="terminal-transcript">
+      <summary>Read the commands as text.</summary>
+      <p>Upper terminal:</p>
+      <pre class="command-example"><code>ssh -i your_key username@127.0.0.1</code></pre>
+      <p>Lower terminal:</p>
+      <pre class="command-example"><code>ssh-keygen -t ed25519 -f ./server_key</code></pre>
+    </details>
+    <dialog id="terminal-dialog" aria-labelledby="terminal-dialog-title">
+      <div class="dialog-header">
+        <h2 id="terminal-dialog-title">SSH login</h2>
+        <button type="button" class="terminal-dialog-close" aria-label="Close command explanation"><span aria-hidden="true">×</span></button>
+      </div>
+      <p class="terminal-dialog-explanation"></p>
+    </dialog>
+    <section class="simulation-practice" aria-labelledby="practice-title">
+      <h2 id="practice-title">Time to Practice</h2>
+      <p>Practice typing the <code>ssh-keygen</code> and <code>ssh</code> login commands. Notice that these terminals are simulations; they do not support a normal set of command line utilities nor do they support the full ssh commands.</p>
+      <section class="simulation-card" data-simulation="keygen" aria-labelledby="keygen-sim-title">
+        <div class="wrap-simulation-status">
+            <p class="simulation-status" role="status" aria-label="Create an SSH key pair: completion status">Incomplete</p>
+        </div>
+        <h3 id="keygen-sim-title">Create an SSH key pair</h3>
+        <p class="simulation-instructions" id="keygen-sim-instructions">Enter the <code>ssh-keygen</code> command, then follow the prompts. Remember, you may leave passphrase blank by pressing Enter at both passphrase prompts.</p>
+        <div class="simulation-terminal">
+          <div class="simulation-transcript" tabindex="0" role="region" aria-label="Create an SSH key pair: terminal history"><pre></pre></div>
+          <form class="simulation-form" aria-describedby="keygen-sim-instructions" autocomplete="off">
+            <label for="keygen-sim-input" class="simulation-input-label">learner@local:~$</label>
+            <div class="simulation-input-row">
+              <input id="keygen-sim-input" class="simulation-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="keygen-sim-instructions">
+              <button type="submit" class="simulation-submit">Enter</button>
+            </div>
+          </form>
+        </div>
+        <p class="simulation-announcement visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+        <button class="simulation-reset" type="button">Start over</button>
+      </section>
+      <section class="simulation-card" data-simulation="login" aria-labelledby="login-sim-title">
+        <div class="wrap-simulation-status">
+            <p class="simulation-status" role="status" aria-label="Log in with SSH: completion status">Incomplete</p>
+        </div>
+        <h3 id="login-sim-title">Log in with SSH</h3>
+        <p class="simulation-instructions" id="login-sim-instructions">Assuming your public key has already been installed on the practice machine, you can login! Try entering a <code>ssh</code> login command below. Your user name is <code>learner</code> and the server's IP address is <code>192.0.2.10</code></p>
+        <div class="simulation-terminal">
+          <div class="simulation-transcript" tabindex="0" role="region" aria-label="Log in with SSH: terminal history"><pre></pre></div>
+          <form class="simulation-form" aria-describedby="login-sim-instructions" autocomplete="off">
+            <label for="login-sim-input" class="simulation-input-label">learner@local:~$</label>
+            <div class="simulation-input-row">
+              <input id="login-sim-input" class="simulation-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="login-sim-note">
+              <button type="submit" class="simulation-submit">Enter</button>
+            </div>
+          </form>
+        </div>
+        <p class="simulation-note" id="login-sim-note">This practice assumes your key is available and its public key is installed.</p>
+        <p class="simulation-announcement visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+        <button class="simulation-reset" type="button">Start over</button>
+      </section>
+      <section class="simulation-real-practice" aria-labelledby="real-practice-title">
+        <h3 id="real-practice-title">Try SSH-Keygen</h3>
+        <p>Now you can try creating a key pair on your own computer.</p>
+        <ul>
+          <li><strong>macOS:</strong> Open Spotlight with Command+Space, type Terminal, and press Return.</li>
+          <li><strong>Windows:</strong> Open the Start menu, search for PowerShell, and open it.</li>
+        </ul>
+        <p>Enter an <code>ssh-keygen</code> command to create a practice key pair. Remember you can use&nbsp;&nbsp;<code>-f ./practice_key</code> to choose its file path and filename.</p>
+        <p>Choose a passphrase when prompted. If the command asks to overwrite an existing file, answer no and choose a different filename.</p>
+        <p>You’ll receive <code>practice_key</code>, your private key, and <code>practice_key.pub</code>, your public key. Keep your private key on your computer and do not share it.</p>
+        <p>If <code>ssh-keygen</code> is unavailable, you'll probably need to set up OpenSSH on your machine. However, it is installed by default on both MacOS and Windows 10/11.</p>
+        <p>Good Luck! Hopefully, you have enjoyed this tutorial.</p>
+      </section>
+    </section>
+      </section>
+  </main>
+
+  <footer class="page-footer">
+    <p class="copyright-text">All Rights Reserved © 2026 Noah S. Kevy</p>
+  </footer>
+</body>
+</html>

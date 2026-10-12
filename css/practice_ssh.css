@@ -1,0 +1,92 @@
+/* Page-local lesson styles use the destination site's existing palette. */
+.ssh-lesson { padding-top: 2rem; }
+.ssh-lesson *, .ssh-skip-link { box-sizing: border-box; }
+.ssh-lesson h3 { margin: 0 0 1rem; font-size: 1.25rem; line-height: 1.4; }
+.ssh-lesson section + section { margin-top: 2.5rem; }
+.ssh-lesson .lesson-intro h2 { margin-bottom: .75rem; }
+.ssh-lesson code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; overflow-wrap: anywhere; }
+.ssh-lesson .command-example { margin: 1rem 0; padding: 1rem; solid var(--alternate-color); border-radius: .4rem; background: var(--dark-color); color: var(--text-wht); font-size: 1rem; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+.ssh-lesson .command-explanation { height: 7rem; overflow-y: auto; scrollbar-gutter: stable; padding: 1rem; margin: 1rem 0; border: 1px solid var(--silver-border); border-radius: .4rem; background: var(--theme-surface); overflow-wrap: anywhere; }
+.ssh-lesson .command-explanation p { margin: 0; }
+.ssh-lesson .command-row { display: flex; flex-wrap: wrap; align-items: center; gap: calc(.75rem - 3px); margin-top: 1rem; }
+.ssh-lesson .command-part { flex: 0 0 auto; min-height: 48px; padding: .65rem .75rem; border: 2px solid var(--primary-color); border-radius: .4rem; font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; font-size: 1rem; line-height: 1.5; color: var(--text-wht); background: var(--primary-color); cursor: pointer; }
+.ssh-lesson .command-part:hover { background: var(--dark-color); }
+.ssh-lesson .command-part[aria-pressed="true"] { background: var(--theme-surface); color: var(--text-blk); text-decoration: underline; text-underline-offset: .3em; }
+.ssh-lesson .command-part:active { background: var(--dark-color); color: var(--text-wht); }
+.ssh-lesson .destination-group { display: inline-flex; flex-wrap: nowrap; gap: 0; max-width: 100%; }
+.ssh-lesson .destination-group .command-part { padding-inline: 0; border-inline: 0; border-radius: 0; }
+.ssh-lesson .destination-group .command-part:first-child { padding-left: .25rem; border-radius: .4rem 0 0 .4rem; }
+.ssh-lesson .destination-group .command-part:last-child { padding-right: .25rem; border-radius: 0 .4rem .4rem 0; }
+.ssh-lesson .destination-group .command-part:focus-visible { position: relative; z-index: 1; }
+.ssh-lesson a { color: var(--dark-color); font-weight: 700; text-underline-offset: .2em; }
+.ssh-lesson a:hover { color: var(--primary-color); }
+.ssh-lesson :focus-visible, .ssh-skip-link:focus-visible { outline: 3px solid var(--focus-color); outline-offset: 3px; }
+.ssh-skip-link { position: absolute; top: 0; left: 1rem; z-index: 20; padding: .75rem 1rem; background: var(--text-wht); color: var(--dark-color); transform: translateY(-120%); }
+.ssh-skip-link:focus { transform: translateY(0); }
+@media (max-width: 600px) {
+  .ssh-lesson .command-explanation { height: 8rem; }
+  .ssh-lesson .command-row { gap: calc(.65rem - 3px); }
+}
+
+/* Terminal introduction and percentage-positioned image hotspots. */
+.ssh-lesson .terminal-intro h2 { margin-bottom: .75rem; font-size: 1.5rem; }
+.ssh-lesson .terminal-intro p + p { margin-top: 1rem; }
+.ssh-lesson .terminal-intro code, .ssh-lesson .terminal-activity code { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
+.ssh-lesson .terminal-image-wrapper { position: relative; border-radius: .6rem; border: 2px solid var(--primary-color); }
+.ssh-lesson .terminal-image { display: block; width: 100%; height: auto; }
+.terminal-image { border-radius: .6rem; }
+/* Centers measured in the 1920 × 1080 screenshot. */
+.ssh-lesson .terminal-hotspot { position: absolute; left: 5.725897%; transform: translate(-50%, -50%); width: 48px; height: 48px; min-height: 48px; display: grid; place-items: center; padding: 0; border: 2px solid var(--primary-color); border-radius: 50%; background: var(--text-wht); }
+.ssh-lesson .terminal-hotspot-upper { top: 31.434587%; }
+.ssh-lesson .terminal-hotspot-lower { top: 68.471624%; }
+.ssh-lesson .terminal-hotspot img { width: 40px; height: 40px; object-fit: contain; pointer-events: none; }
+.ssh-lesson .terminal-hotspot:hover { background: var(--theme-surface); }
+.ssh-lesson .terminal-hotspot[aria-pressed="true"] { border: 4px solid var(--dark-color); background: var(--theme-surface); }
+.ssh-lesson .terminal-transcript { margin-top: 1.5rem; }
+.ssh-lesson .terminal-transcript summary { cursor: pointer; padding-block: .5rem; font-weight: 700; }
+.ssh-lesson .terminal-transcript p { margin-top: 1rem; }
+.ssh-lesson #terminal-dialog { width: fit-content; max-width: min(24rem, calc(100vw - 2rem)); height: auto; margin: 0; overflow-wrap: anywhere; }
+.ssh-lesson .terminal-dialog-close { flex: 0 0 48px; width: 48px; min-height: 48px; padding: .25rem; border: 0; border-radius: .4rem; color: var(--text-wht); background: var(--primary-color); font-size: 1.5rem; line-height: 1; }
+@media (max-width: 600px) {
+  .ssh-lesson .terminal-hotspot img { width: 24px; height: 24px; }
+}
+
+/* Focused command simulations. */
+.ssh-lesson .simulation-practice { margin-top: 2.5rem; }
+.ssh-lesson .simulation-practice h2 { font-size: 1.5rem; margin: 0 0 .75rem; }
+.ssh-lesson .simulation-practice h3 { font-size: 1.25rem; margin: 1rem 0 .75rem; }
+.ssh-lesson .simulation-practice code, .ssh-lesson .simulation-terminal { font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
+.ssh-lesson .simulation-card { min-width: 0; margin-top: 1.5rem; padding: 1.25rem; border: 2px solid var(--primary-color); border-radius: .6rem; background: var(--text-wht); }
+.ssh-lesson .simulation-status { display: inline-block; width: 8rem; padding: .25rem .75rem; border-radius: .3rem; background: var(--theme-surface); color: var(--text-blk); font-weight: 700; text-align: left; }
+.ssh-lesson .wrap-simulation-status { text-align: right; }
+.ssh-lesson .simulation-status.is-complete { background: var(--primary-color); color: var(--text-wht); }
+.ssh-lesson .simulation-instructions { margin-bottom: 1rem; }
+.ssh-lesson .simulation-terminal { min-width: 0; padding: 1rem; border-radius: .4rem; background: var(--text-blk); color: var(--text-wht); }
+.ssh-lesson .simulation-transcript { height: 16rem; overflow: auto; scrollbar-gutter: stable; margin-bottom: 1rem; }
+.ssh-lesson .simulation-transcript pre { margin: 0; font: inherit; line-height: 1.6; white-space: pre; }
+.ssh-lesson .simulation-input-label { display: block; margin-bottom: .5rem; overflow-wrap: anywhere; }
+.ssh-lesson .simulation-input-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+.ssh-lesson .simulation-input { min-width: 0; flex: 1 1 12rem; width: 100%; min-height: 48px; padding: .5rem .75rem; border: 2px solid var(--theme-surface); border-radius: .3rem; font: inherit; color: var(--text-blk); background: var(--text-wht); }
+.ssh-lesson .simulation-input[readonly] { background: var(--theme-surface); }
+.ssh-lesson .simulation-submit, .ssh-lesson .simulation-reset { padding: .5rem 1rem; border: 2px solid var(--primary-color); border-radius: .3rem; background: var(--primary-color); color: var(--text-wht); font: inherit; }
+.ssh-lesson .simulation-submit:disabled { background: var(--theme-surface); color: var(--text-blk); cursor: default; }
+.ssh-lesson .simulation-reset { margin-top: .75rem; }
+.ssh-lesson .simulation-note { margin-top: .75rem; }
+.ssh-lesson .simulation-real-practice { margin-top: 2rem; }
+.ssh-lesson .simulation-real-practice p + p { margin-top: 1rem; }
+@media (max-width: 600px) {
+  .ssh-lesson .simulation-card { padding: .75rem; }
+  .ssh-lesson .simulation-terminal { padding: .75rem; }
+}
+
+.ssh-lesson .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.ssh-lesson #terminal-dialog { position: fixed; right: auto; bottom: auto; box-sizing: border-box; padding: 1rem 20px; border: 2px solid var(--primary-color); border-radius: .6rem; background: var(--text-wht); color: var(--text-blk); max-height: calc(100dvh - 2rem); overflow: auto; }
+.ssh-lesson #terminal-dialog::backdrop { background: var(--shadow-menu); }
+.ssh-lesson .dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.ssh-lesson .terminal-dialog-close { cursor: pointer; }
+
+.ssh-lesson .simulation-submit, .ssh-lesson .simulation-reset { min-height: 48px; cursor: pointer; }
+.ssh-lesson .simulation-submit:hover, .ssh-lesson .simulation-reset:hover, .ssh-lesson .terminal-dialog-close:hover { background: var(--dark-color); }
+.ssh-lesson .simulation-submit:disabled { cursor: default; }
+.ssh-lesson .terminal-activity { margin-top: 2.5rem; }
+.ssh-lesson .simulation-card .simulation-status { margin: 0 0 1rem; }
