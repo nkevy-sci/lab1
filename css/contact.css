@@ -1,0 +1,93 @@
+.contact-page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 72rem;
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1rem, 5vw, 3rem);
+}
+
+.contact-page .contact-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.contact-page section {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.contact-page h2 {
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+.contact-page p {
+  max-width: 60ch;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Contact page LinkedIn styles; independent of about.css. */
+.contact-page #follow-linkedin {
+  margin-top: 0;
+}
+
+.contact-page #follow-linkedin .linkedin-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(.4rem, 1.6vw, .8rem);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 18rem;
+  min-height: 7rem;
+  margin-top: 0;
+  padding: 1rem;
+  border: 1px solid var(--silver-border);
+  border-radius: .5rem;
+  background: #fff;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.contact-page #follow-linkedin .linkedin-profile img {
+  display: block;
+  flex: 0 0 auto;
+  width: clamp(1.6rem, 6vw, 3rem);
+  height: auto;
+}
+
+.contact-page #follow-linkedin .linkedin-profile span {
+  min-width: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+}
+
+.contact-page #follow-linkedin .linkedin-profile:hover {
+  box-shadow: 0 4px 12px var(--shadow-soft);
+}
+
+.contact-page #follow-linkedin .linkedin-profile:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 4px;
+}
+
+.contact-page #contact-email-form {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  padding-top: clamp(1.5rem, 4vw, 2rem);
+  border-top: 1px solid var(--silver-border);
+}
+
+.contact-page #contact-email-form iframe {
+  display: block;
+  width: 100%;
+  margin-top: .5rem;
+}
+
+@media (max-width: 48rem) {
+  .contact-page .contact-overview {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
