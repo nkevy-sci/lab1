@@ -1,8 +1,11 @@
-.about-page {
+#main-content {
+    padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+about-page {
   box-sizing: border-box;
   width: var(--home-width);
   max-width: var(--home-width);
-  padding-top: clamp(2rem, 4vw, 3rem);
 }
 
 .about-page h2 {
@@ -11,7 +14,7 @@
 }
 
 .about-page p {
-  max-width: 180ch;
+  max-width: 68ch;
   margin: 0;
   line-height: 1.6;
   overflow-wrap: break-word;
