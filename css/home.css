@@ -31,6 +31,16 @@ main > p { max-width: 68ch; margin-block: 1rem; }
     border: 0;
     border-radius: inherit;
 }
+#navigation-wrap-image img {
+    display: block;
+    box-sizing: border-box;
+    width: 68%;
+    height: auto;
+    border: 1px solid var(--silver-border);
+    border-radius: .0618034rem;
+    box-shadow: 0 .381966rem 1rem var(--shadow-soft);
+}
+main > .first-activity { margin-top: var(--home-section-space); }
 .page-footer { width: var(--home-width); margin: 0 auto var(--home-space); }
 @media (max-width: 56rem) {
     .column-parent { grid-template-columns: minmax(0, 1fr); gap: var(--home-space); }
