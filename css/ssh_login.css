@@ -1,0 +1,91 @@
+:root[data-theme="page-3"] .ssh-login {
+    width: var(--home-width);
+    max-width: var(--home-width);
+    padding-top: 2.618031rem;
+}
+.ssh-login .ssh-introduction {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618033fr);
+    align-items: start;
+    gap: 2.618031rem;
+    margin-bottom: 2.618031rem;
+}
+.ssh-login h2 { margin: 0 0 1rem; }
+.ssh-login p { margin-block: 1rem; }
+.ssh-login .ssh-introduction-text p { max-width: 68ch; }
+.ssh-login .video-section,
+.ssh-login .left-col,
+.ssh-login .right-col { min-width: 0; }
+.ssh-login .step-video {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 2px solid var(--media-border);
+    border-radius: 6px;
+}
+.ssh-login .collapse-step { margin: 1.618033vh; }
+.ssh-login .step-summary {
+    padding: 1.618033vh 1.618033vw;
+    border-radius: 6px;
+    background: linear-gradient(to top, var(--dark-color), var(--primary-color));
+    color: var(--text-wht);
+    font-size: var(--head-text);
+    cursor: pointer;
+}
+.ssh-login :is(summary, a, pre, iframe):focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 4px;
+}
+.ssh-login .column-parent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.61803vw;
+    margin-inline: 2.61803vw;
+    padding-block: 1rem;
+}
+.ssh-login .left-col,
+.ssh-login .right-col { flex: 1 1 350px; }
+.ssh-login figure { margin: 1rem 0; }
+.ssh-login .step-figure {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--media-border);
+    border-radius: 6px;
+}
+.ssh-login figcaption { margin-top: 0.5rem; }
+.ssh-login li { margin-block: 0.5rem; }
+.ssh-login .step-note {
+    background: var(--theme-surface);
+    padding: 1.618033vh;
+    border: 1px solid var(--primary-color);
+    border-left: 6px solid var(--primary-color);
+    border-radius: 0 6px 6px 0;
+}
+.ssh-login code {
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    overflow-wrap: anywhere;
+}
+.ssh-login pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    background: var(--theme-surface);
+}
+@media (max-width: 56rem) {
+    .ssh-login .ssh-introduction {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.618033rem;
+    }
+}
+@media (max-width: 35rem) {
+    :root[data-theme="page-3"] .ssh-login { padding-top: 1.618033rem; }
+    .ssh-login h2 { font-size: 1.381966rem; }
+    .ssh-login .collapse-step { margin-inline: 0; }
+    .ssh-login .step-summary { padding-inline: 1rem; }
+}

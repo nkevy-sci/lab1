@@ -6,7 +6,7 @@
   <meta name="description" content="An introduction to cloud computing.">
   <meta name="author" content="Noah S. Kevy">
   <title>Login with SSH</title>
-  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/ssh_login.css">
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/head_foot.css">
@@ -44,15 +44,151 @@
 
   </header>
 
-  <main id="main-content">
-    <h2>Lab 3: Iframes</h2>
-    <p>
-        This website will be about cloud computing. But it isn't done yet.
-    </p>
-    <p>
-        For now you can see the navigation bar, and I have practiced using multiple pages.
-    </p>
-  </main>
+  <main id="main-content" class="ssh-login">
+<section class="ssh-introduction" aria-labelledby="ssh-heading">
+<div class="ssh-introduction-text">
+<h2 id="ssh-heading">What happens on login?</h2>
+<p>Once you log in, you can use the command-line terminal to run Linux commands on your VM. You’ll start in your account’s home directory, where you can create, edit, and delete files. But really, you have access to the full file system. You can perform administrative tasks, such as installing software or configuring settings. You can even integrate your VM with other systems or services.</p>
+</div>
+<section class="video-section" aria-labelledby="video-heading">
+<h2 id="video-heading">Video Demonstration</h2>
+<iframe class="step-video" src="https://www.youtube.com/embed/YpWlr4gSxp0" title="Video demonstration of the five SSH login steps" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p>This video demonstrates all five of the steps explained below. Thanks for watching.</p>
+</section>
+</section>
+<section class="page-section">
+<details class="collapse-step" open>
+<summary class="step-summary">Step 1. Get Your Key</summary>
+<div class="column-parent">
+<div class="left-col">
+<p>Create a SSH key, if you haven’t already done so.</p>
+<ol type="a">
+<li>Create a file folder
+</li>
+<li>Get the path to this folder
+</li>
+<li>Create a public-private key pair, saving it in this folder.
+</li></ol>
+<p>You should be able to see your keys in your file explorer.</p>
+</div>
+<div class="right-col">
+<figure>
+<img class="step-figure" src="img/login_s1.png" alt="macOS Finder is open and shows two files in a folder.">
+<figcaption>Figure 1: Two files are shown in macOS Finder.</figcaption>
+</figure>
+</div>
+</div>
+</details>
+</section>
+<section class="page-section">
+<details class="collapse-step">
+<summary class="step-summary">Step 2. Print &amp; Copy Your Public Key</summary>
+<div class="column-parent">
+<div class="left-col">
+<p>Using the command line, enter ‘cat YOUR_KEY.pub’ but replace YOUR_KEY.pub with the file path and name of your public key.</p>
+<ol type="a">
+<li>Open macOS terminal or Microsoft PowerShell.
+</li>
+<li>Type the cat command to print your public key
+</li>
+<li>Copy the printed text to your clipboard.
+</li></ol>
+<p>The cat command:</p>
+<pre tabindex="0" aria-label="cat command"><code>cat file_path/filename of your public key</code></pre>
+<p>The type command:</p>
+<pre tabindex="0" aria-label="type command"><code>type file_path/filename of your public key</code></pre>
+<div class="step-note"><strong>Notice:</strong> At the end of your public key is your username. Look for the <code>username@hostname</code> and remember your username.</div>
+</div>
+<div class="right-col">
+<figure>
+<img class="step-figure" src="img/login_s2.png" alt="A command line terminal shows the cat command. It’s output it underlined.">
+<figcaption>Figure 2: The cat command prints demo-key.pub</figcaption>
+</figure>
+</div>
+</div>
+</details>
+</section>
+<section class="page-section">
+<details class="collapse-step">
+<summary class="step-summary">3. Navigate to Your Google Cloud Instance</summary>
+<div class="column-parent">
+<div class="left-col">
+<p>Using your web browser, find your Google Cloud instance.</p>
+<ol type="a">
+<li>Open this <a href="https://console.cloud.google.com/welcome">link to Google Cloud’s welcome page</a>.
+</li>
+<li>In the menu on the left-hand side, select “Compute Engin” and then “VM Instances.”
+</li>
+<li>Find the “name” column and click on the name of your VM.
+</li></ol>
+</div>
+<div class="right-col">
+<figure>
+<img class="step-figure" src="img/login_s3.png" alt="In the Google Cloud interface, under VM Instances, click the name of your VM.">
+<figcaption>Figure 3: Clicking the VM name opens a new page.</figcaption>
+</figure>
+</div>
+</div>
+</details>
+</section>
+<section class="page-section">
+<details class="collapse-step">
+<summary class="step-summary">4. Add Your SSH Key</summary>
+<div class="column-parent">
+<div class="left-col">
+<ol type="a">
+<li>In the upper left, click the “Edit” button
+</li>
+<li>Scroll down until you find the “SSH Keys” section
+</li>
+<li>Click the “Add item” button
+</li>
+<li>Paste your printed public SSH key into the text input area
+</li>
+<li>Press “Enter” or click the “Save” button located at the bottom of the screen
+</li></ol>
+</div>
+<div class="right-col">
+<figure>
+<img class="step-figure" src="img/login_s4.png" alt="When editing your VM, you can see the SSH Keys configuration feature. The add item button is highlighted, and an SSH Key has been added to the text input box.">
+<figcaption>Figure 4: This Edit menu allows users to add SSH keys.</figcaption>
+</figure>
+</div>
+</div>
+</details>
+</section>
+<section class="page-section">
+<details class="collapse-step">
+<summary class="step-summary">5. Login with SSH</summary>
+<div class="column-parent">
+<div class="left-col">
+<ol type="a">
+<li>Go back to the VM Instances page
+</li>
+<li>Start your VM if it is not already running
+<ol type="a">
+<li>Click on the check box in the “Status” column for your VM
+</li>
+<li>Click “Start or Resume”
+</li></ol></li>
+<li>Copy the IP address in the “External IP” column
+</li>
+<li>Open macOS terminal or Windows PowerShell
+</li>
+<li>Run an SSH login command
+</li></ol>
+<p>Remember, the SSH login ends with <code>username@host_ip_address</code>. Your username was at the end of your public key, and your host address is the external IP address.</p>
+</div>
+<div class="right-col">
+<figure>
+<img class="step-figure" src="img/login_s5.png" alt="In the Google Cloud user interface, under VM Instances. The status check box is clicked so the “Start / Resume” button is visible.">
+<figcaption>Figure 5: Clicking “Start” will turn on your VM.</figcaption>
+</figure>
+</div>
+</div>
+</details>
+</section>
+</main>
 
   <footer class="page-footer">
     <p class="copyright-text">All Rights Reserved © 2026 Noah S. Kevy</p>
