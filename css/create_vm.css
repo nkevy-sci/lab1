@@ -18,7 +18,7 @@ img.first {
     margin-top: 6.854085vh;
     transform: translate(-1.2vh,0);
 }
-#step-note {
+.step-note {
     background-color: var(--theme-surface);
     padding: 1.618033vh;
     border: solid 1px var(--gray-color);
@@ -116,4 +116,51 @@ img.first {
 .step-video {
     width: 500px;
     height: 350px;
+}
+
+/* Introductory layout follows the home page's spacing and breakpoint. */
+:root[data-theme="create-vm"] main {
+    width: var(--home-width);
+    max-width: var(--home-width);
+    padding-top: 2.618031rem;
+}
+.vm-introduction {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.618033fr);
+    align-items: start;
+    gap: 2.618031rem;
+    margin-bottom: 2.618031rem;
+}
+.vm-introduction-text,
+.vm-introduction .video-section,
+.vm-introduction .video-section-child {
+    min-width: 0;
+}
+.vm-introduction h2 { margin: 0 0 1rem; }
+.vm-introduction-text p { margin-block: 1rem; max-width: 68ch; }
+.vm-introduction .video-section {
+    display: block;
+    margin: 0;
+    transform: none;
+}
+.vm-introduction .video-section-child,
+.vm-introduction .wrap-step-video { width: 100%; }
+.vm-introduction .step-video {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+.vm-introduction .video-caption { max-width: none; }
+.vm-next-activity { margin-top: 2.618031rem; }
+@media (max-width: 56rem) {
+    .vm-introduction {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.618033rem;
+    }
+}
+@media (max-width: 35rem) {
+    :root[data-theme="create-vm"] main { padding-top: 1.618033rem; }
+    .vm-introduction h2 { font-size: 1.381966rem; }
 }

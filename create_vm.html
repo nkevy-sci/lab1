@@ -44,19 +44,23 @@
     </header>
 
     <main>
-    <section class="page-section">
-        <div class="wrap-hero-image">
-            <img class="job-aid-hero-image"
-                src="img/rainbow-cloud.png"
-                alt="There is a bright puffy cloud with soft multi-colored light shinning through it."/>
-        </div>
-        <div class="wrap-hero-text">
-            <p class="intro-text">
-                The following steps explain how to create a virtual machine using the Google Cloud platform. A virtual machine (VM) is similar to a computer except that its component parts are digital not physical.
+    <section class="vm-introduction" aria-labelledby="vm-heading">
+        <div class="vm-introduction-text">
+            <h2 id="vm-heading">What's a Virtual Machine?</h2>
+            <p>
+                A virtual machine (VM) is a computer made entirely from software. In other words, it uses virtual hardware components, such as a processor, memory, storage, and input/output devices. Even though it relies on a physical computer’s resources, a VM has its own operating system and applications. A key benefit of this technology is that one physical computer can run multiple independent VMs.
             </p>
         </div>
+    <section class="video-section">
+        <div class="video-section-child">
+            <h2 class="video-header">Video Demonstration</h2>
+            <div class="wrap-step-video">
+                        <iframe class="step-video" src="https://www.youtube.com/embed/8XGcPbiSMaI?si=uc2nUHIGaJ-s9SxQ&amp;start=0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="page-text video-caption">This video demonstrates all five of the steps explained below. Thanks for watching.</p>
+        </div>
     </section>
-    <hr id="page-break-a">
+    </section>
     <section class="page-section">
     <details class="collapse-step" open>
         <summary class="step-summary">
@@ -78,7 +82,7 @@
                 <figcaption>
                     Figure 1: The home page for Google Cloud. Login to your Google account.
                 </figcaption>
-            <figure>
+            </figure>
             </div>
         </div>
     </details>
@@ -98,6 +102,10 @@
                     Click <strong>Try for Free</strong>
                     to get started. Follow the on-screen instructions.
                         </p>
+                <div class="step-note">
+                    <strong>Notice.</strong>
+                    Starting a free trial will require a credit card, but you will not be charged for signing up.
+                </div>
             </div>
             <div class="right-col">
                 <figure>
@@ -163,7 +171,7 @@
                 <p class="page-text">
                     Fill in the form fields to describe what the instance will be like.
                 </p>
-                <p class="page-text>
+                <p class="page-text">
                     Overwrite the default <strong>Name</strong>, giving your instance a name.
                 </p>
                 <p class="page-text">
@@ -172,7 +180,7 @@
                 <p class="page-text">
                     Switch to the next form by clicking on <strong>OS and storage</strong> on the left-hand side. If you want to change the operating system, click the <strong>Change</strong> button. Then, in the pop-up menu, select the kind of operating system you need, and specify a version.
                 </p>
-                <div id="step-note">
+                <div class="step-note">
                     <strong>Notice.</strong>
                     Most of these fields will be left with their default values.
                 </div>
@@ -215,7 +223,7 @@
                 <figure>
                     <img src="img/create-button.png"
                         class="step-figure"
-                        alt="The form that configures the new VM is shown. At the bottom the blue button that says create is highlighted, showing where to click."
+                        alt="The form that configures the new VM is shown. At the bottom the blue button that says create is highlighted, showing where to click.">
                     <figcaption>
                         Figure 5: Creating the VM and locating its IP
                     </figcaption>
@@ -224,17 +232,11 @@
         </div>
     </details>
     </section>
-    <br>
-    <hr id="page-break-b">
-    <section class="video-section">
-        <div class="video-section-child">
-            <h2 class="video-header">Video Demonstration</h2>
-            <div class="wrap-step-video">
-                        <iframe class="step-video" src="https://www.youtube.com/embed/8XGcPbiSMaI?si=uc2nUHIGaJ-s9SxQ&amp;start=0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <p class="page-text video-caption">This video demonstrates all five of the steps explained above. Thanks for watching.</p>
-        </div>
-    </section>
+
+    <p class="vm-next-activity">
+        Next Activity:
+        <a href="practice_ssh.html">Get some practice with the ssh command.</a>
+    </p>
     </main>
     <footer class="page-footer">
         <p class="copyright">All Rights Reserved. © 2026 Noah S. Kevy</p>
